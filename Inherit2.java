@@ -3,6 +3,8 @@ import java.util.*;
 class Employee{
     String name;
     int id;
+    String des;
+    float salary;
     Employee(){
         Scanner sc= new Scanner(System.in);
         System.out.println("enter the name:");
@@ -10,36 +12,33 @@ class Employee{
         System.out.println("Enter the id:");
          id = sc.nextInt();
     }
-    
-
-}
-
-class Dev extends Employee{
-    
-    String des="Developer";
-    
-    float salary=2000;
-    
     public void display(){
         System.out.println("Name:"+name);
         System.out.println("Designation:"+des);
         System.out.println("id:"+id);
         System.out.println("salary:"+salary);
      }
+    
+
+}
+
+class Dev extends Employee{
+    
+    Dev(){
+         des="Developer";
+      salary=2000;
+    }
+    
 }
 
 class Clerk extends Employee{
     
-    String des="Clerk";
+    Clerk(){
+         des="Clerk";
     
-    float salary=1000;
+     salary=1000;
+    }
      
-     public void display(){
-        System.out.println("Name:"+name);
-        System.out.println("Designation:"+des);
-        System.out.println("id:"+id);
-        System.out.println("salary:"+salary);
-     }
 }
 class Inherit2{
     public static void main(String args[]){
