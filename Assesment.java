@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Emp {
+abstract class Emp {
     int id;
     String name;
     int age;
@@ -32,46 +32,57 @@ class Emp {
         System.out.println("Designation:\t" + designation);
     }
 
-    void raiseSalary() {
-        System.out.println("---------------------------------------------------");
-        System.out.println("-------------!Salary has been updated!-------------");
-    }
+    abstract void raiseSalary() ;
+        
 }
 
-class Dev extends Emp {
+final class Dev extends Emp {
 
     Dev() {
-        designation = "Developer";
+         designation = "Developer";
         salary = 1200000;
+    }
+     public void raiseSalary(){
+        salary= salary + salary*(10/100);
+        System.out.println(salary);
     }
 
 }
 
-class Clerk extends Emp {
+final class Clerk extends Emp {
 
     Clerk() {
         designation = "Clerk";
         salary = 600000;
     }
-
+    public void raiseSalary(){
+        float salary= super.salary + super.salary*(10/100);
+        System.out.println(salary);
+    }
 }
 
-class Manager extends Emp {
+final class Manager extends Emp {
 
     Manager() {
         designation = "Manager";
         salary = 1800000;
     }
-
+    public void raiseSalary(){
+        float salary= super.salary + super.salary*(10/100);
+        System.out.println(salary);
+    }
 }
 
-class Tester extends Emp {
+final class Tester extends Emp {
 
     Tester() {
         designation = "Tester";
         salary = 700000;
     }
-
+    public void raiseSalary(){
+        float salary= super.salary + super.salary*(10/100);
+        System.out.println(salary);
+    }
 }
 
 public class Assesment {
